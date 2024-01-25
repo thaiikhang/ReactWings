@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { Experience } from "./components/Experience";
 import { Overlay } from "./components/Overlay";
 import { usePlay } from "./contexts/Play";
+import BackgroundAudio from "./components/BackgroundAudio";
 
 function App() {
   const { play, end } = usePlay();
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+      <BackgroundAudio playing={play && !end} />
       <Canvas>
         <color attach="background" args={["#ececec"]} />
         <ScrollControls
